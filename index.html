@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Deeksha Madhu A - Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Home</h2>
+        <div>
+            <p>Welcome to my Portfolio</p>
+            <p>I'm Deeksha Madhu A pursuing B.E CSE in Adithya Institute Of Technology</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am pursuing my Bachelor of Engineering degree in Computer Science at Adithya Institute of Technology, where I have gained a solid foundation in programming, data structures, algorithms, and software engineering. I have also participated in several academic projects and competitions, where I have demonstrated my creativity, problem-solving, and teamwork skills.
+
+            My core competencies include UI/UX design, web development, team leadership, team management, and team building. I am motivated by the challenges and opportunities that the web industry offers, and I strive to deliver high-quality and innovative solutions that enhance the user experience and satisfaction. I am looking for a career that allows me to grow and contribute to the web community.</p>
+        </div></p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Web Developer</p>
+            <p>"I have attended full stack course in udemy and done a project in Web Application development."</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Cloud management</p>
+            <p>"I have attended Oracle course and done a project in Cloud management ."</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"  required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"  required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" ></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<style>
+    
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('transparent.png'); 
+    background-size: cover; 
+    background-position: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+nav{
+    text-align: right;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.project {
+    margin-bottom: 20px;
+    
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 20px;
+}
+footer p{
+    margin: 20px;
+}
+form {
+    max-width: 5000px;
+    margin: 0 auto;
+}
+
+label,
+input,
+textarea,
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('contact-form');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const errorDiv = document.getElementById('error-msg');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const nameValue = nameInput.value.trim();
+                const emailValue = emailInput.value.trim();
+                const messageValue = messageInput.value.trim();
+
+                if (nameValue === '' || emailValue === '' || messageValue === '') {
+                    errorDiv.textContent = 'Please fill in all fields.';
+                    return;
+                }
+
+                if (!isValidEmail(emailValue)) {
+                    errorDiv.textContent = 'Please enter a valid email address.';
+                    return;
+                }
+
+                // If all fields are filled and email is valid, submit the form
+                // You can replace this with your own logic like sending the form data to a server
+                alert('Form submitted successfully!');
+                form.reset();
+            });
+
+            function isValidEmail(email) {
+                // Simple email validation using regex
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+</script>
